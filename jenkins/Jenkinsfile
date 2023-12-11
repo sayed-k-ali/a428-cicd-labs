@@ -1,4 +1,5 @@
 node{
+    checkout([$class: 'MercurialSCM', source: 'https://github.com/sayed-k-ali/a428-cicd-labs.git'])
     docker.image('node:lts-alpine').inside('-p 3000:3000') {
         withEnv(['CI=true']) {
             stage('Build') {
